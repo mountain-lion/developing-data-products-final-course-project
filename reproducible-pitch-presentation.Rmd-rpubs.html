@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Reproducible Pitch</title>
+  <title>Reproducible Pitch - Developing Data Products</title>
     
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -749,7 +749,7 @@ hljs.initHighlightingOnLoad();
   <div class="slides">
 
 <section data-state="section" data-transition="linear" data-transition-speed="default">
-<h1>Reproducible Pitch</h1><p>&quot;SS (Mountain Lion)&quot;<br/>&quot;December 21, 2017&quot;</p>
+<h1>Reproducible Pitch - Developing Data Products</h1><p>&quot;SS (Mountain Lion)&quot;<br/>&quot;December 21, 2017&quot;</p>
 
 <div class="slideContent" >
 
@@ -760,12 +760,9 @@ hljs.initHighlightingOnLoad();
 <h3>Introduction</h3>
 <div class="slideContent" >
 <ul>
-<li><p>This presentation is for the assignemnt of Week 4, <strong><em>Developing Data Products course from Coursera</em></strong> (<a href="https://www.coursera.org/learn/data-products">https://www.coursera.org/learn/data-products</a>). </p>
-
-<ul>
-<li>The presentation is meant to show the salient features and design principles applied for the development of the said application.</li>
-<li>The presentation was generated using <strong><em>RStudio</em></strong>(<a href="https://www.rstudio.com">https://www.rstudio.com</a>) and <strong><em>R Studio Presenter</em></strong>(<a href="https://support.rstudio.com/hc/en-us/sections/200130218-R-Presentations">https://support.rstudio.com/hc/en-us/sections/200130218-R-Presentations</a>) framework.</li>
-</ul></li>
+<li><p>This presentation is for the assignemnt of Week 4, <strong><em>Developing Data Products course from Coursera</em></strong> (<a href="https://www.coursera.org/learn/data-products">https://www.coursera.org/learn/data-products</a>). </p></li>
+<li><p>The presentation is meant to show the salient features and design principles applied for the development of the said application.</p></li>
+<li><p>The presentation was generated using <strong><em>RStudio</em></strong>(<a href="https://www.rstudio.com">https://www.rstudio.com</a>) and <strong><em>R Studio Presenter</em></strong>(<a href="https://support.rstudio.com/hc/en-us/sections/200130218-R-Presentations">https://support.rstudio.com/hc/en-us/sections/200130218-R-Presentations</a>) framework.</p></li>
 </ul>
 
 </div>
@@ -775,9 +772,9 @@ hljs.initHighlightingOnLoad();
 <h3>Application</h3>
 <div class="slideContent" >
 <ul>
-<li><p>This application demonstrates Model-View-Controller (MVC) pattern as supported through Shiny Web App framework.</p></li>
+<li><p>This application demonstrates Model-View-Controller (MVC) pattern as supported through Shiny Web App framework.An instance is up &amp; running at  <a href="https://mountain-lion.shinyapps.io/Course-Project/">https://mountain-lion.shinyapps.io/Course-Project/</a> and the source code can be found at <a href="https://github.com/mountain-lion/developing-data-products-final-course-project">https://github.com/mountain-lion/developing-data-products-final-course-project</a>. </p></li>
 <li><p>The Model is coded in order to lazily re-initialize while handling user event at the view-controller (sidebar widgets). Furthermore, the UI (view-controller) paramerters directly map to the underlying variables of the dataset/table.</p></li>
-<li><p>A Random Forest prediction model is (re)generated, trained and rendered for a specific dataset of cars (see below).</p></li>
+<li><p>In the application, an user can freely play with the UI values in order to simulate the parameters (side-bar widgets) of an hypothetical car and predict its MPG consumption.</p></li>
 </ul>
 
 </div>
@@ -808,28 +805,26 @@ hljs.initHighlightingOnLoad();
 <section data-transition="linear" data-transition-speed="default">
 <h3>Prediction</h3>
 <div class="slideContent" >
-<p>The said Random Forest prediction model is generated and trained using the <em>&#39;mtcars&#39;</em> dataset. The goal of this model is to predict the fuel consumption (<strong><em>mpg</em></strong> variable) based on the user selection of other variables in the side-bar:</p>
+<p>The said Random Forest prediction model is generated and trained using the <em>&#39;mtcars&#39;</em> dataset. </p>
 
-<pre><code class="r">defaultCar &lt;- data.frame(
-  cyl = 5, 
-  disp = 100, 
-  hp = 80, 
-  drat = 4.1, 
-  wt = 1.8, 
-  qsec = 24, 
-  vs = 1, 
-  am = 1, 
-  gear = 4, 
-  carb = 2)
+<ul>
+<li>Example of Prediction using the Random Forest model</li>
+</ul>
+
+<pre><code class="r">hypotheticalCar &lt;- data.frame(
+  cyl = 5, disp = 100, hp = 80, drat = 4.1, wt = 1.8, qsec = 24, vs = 1, am = 1, gear = 4, carb = 2)
 </code></pre>
 
 <ul>
-<li>MPG Prediction for Default Car Using Random Forest Model</li>
+<li>Predicted MPG (Miles-Per-Gallon) for the above hypothetical Car using Random Forest Model is: </li>
 </ul>
 
-<pre><code>       1 
-29.39747 
+<pre><code>[1] 29.39747
 </code></pre>
+
+<ul>
+<li>The above value of MPG has been predicted using the same callback to Random Forest model builder function that got used in the Shiny Web App described in this presentation. </li>
+</ul>
 
 </div>
 
